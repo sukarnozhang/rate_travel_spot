@@ -1,0 +1,143 @@
+body {
+  background-color: black;
+}
+
+.pagehead {
+  background-color: black;
+  color: purple;
+  text-align: center;
+  width: 230px;
+  position: absolute;
+  top: 15%;
+  left: 41%;
+}
+
+.loginbox {
+  width: 210px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-54%);
+}
+
+.loginfield {
+  border-bottom: 3px solid purple;
+  margin-bottom: 20px;
+  padding: 5px;
+  background-color: black;
+}
+
+#loginbtn {
+  width: 90px;
+  height: 30px;
+  margin-right: 10px;
+  margin-left: 5px;
+  background-color: green;
+}
+
+#regbtn {
+  width: 90px;
+  height: 30px;
+  background-color: yellow;
+}
+
+#registerbtn {
+  width: 210px;
+  height: 30px;
+  margin-right: 10px;
+  background-color: green;
+}
+
+#backbtn {
+  margin-top: 10px;
+  width: 210px;
+  height: 30px;
+  background-color: yellow;
+}
+
+#chgbtn {
+  margin-top: 10px;
+  width: 210px;
+  height: 30px;
+  background-color: blue;
+}
+
+#delbtn {
+  margin-top: 10px;
+  width: 210px;
+  height: 30px;
+  background-color: red;
+}
+
+.welcome {
+  font-family: "Lobster", cursive;
+  color: purple;
+  text-align: center;
+}
+
+.movielist {
+  font-family: "Lobster", cursive;
+  margin-top: 50px;
+  color: white;
+  text-align: center;
+}
+
+.rating {
+  text-align: center;
+}
+
+.allratings {
+  font-family: "Lobster", cursive;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.searchresult {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.results {
+  margin-top: 50px;
+  color: white;
+}
+
+.namesearched {
+  display: inline;
+}
+
+.addfriend {
+  display: inline;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.addfriend:hover {
+  cursor: pointer;
+}
+
+.deleterec {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.inlineform {
+  display: inline-block;
+}
+
+.hiddeninput {
+  display: none;
+}
+
+.userratings {
+  color: grey;
+}
+
+.hiddenform {
+  display: none;
+}
