@@ -20,18 +20,18 @@ require "dbconfig/config.php"
 <body>
 
     <?php
-    $movie_name =  "";
+    $place_name =  "";
     if (isset($_POST["reg_btn"])) {
-        $movie_name = $_POST["movie_name"];
+        $place_name = $_POST["place_name"];
         $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
 
         // Fill in the query to check if there are any existing records of the username submitted
-        $query = "SELECT * from movies WHERE username = '$username' ";
+        $query = "SELECT * from place WHERE username = '$username' ";
         $query_run = mysqli_query($con, $query);
 
 
         // Fill in the query to register the user details into the database
-        $query = "INSERT into movies (movie_name,image) VALUES('$movie_name', '$file')";
+        $query = "INSERT into place (place_name,image) VALUES('$place_name', '$file')";
 
         $query_run = mysqli_query($con, $query);
 
@@ -46,17 +46,17 @@ require "dbconfig/config.php"
     <form class="form-signin" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="loginbox">
 
         <div class="text-center mb-4">
-            <img class="mb-4" src="bootstrap.png" alt="" width="72" height="72" />
+            <img class="mb-4" src="./photos/bootstrap.png" alt="" width="72" height="72" />
             <h1 class="h3 mb-3 font-weight-normal">Register New Travel Spot</h1>
         </div>
 
         <div class="form-label-group">
-            <input type="movie_name" id="inputMovieName" class="form-control" placeholder="User Name" name="movie_name" required autofocus />
-            <label for="inputUserName">Name of Place</label>
+            <input type="place_name" id="inputPlaceName" class="form-control" placeholder="Name of Place" name="place_name" required autofocus />
+            <label for="inputPlaceName">Name of Place</label>
         </div>
 
         <div class="form-label-group">
-            <input type="file" id="inputImage" placeholder="Password" name="image" required />
+            <input type="file" id="inputImage" name="image" required />
             <label for="inputImage">Upload a cool image!</label>
         </div>
 

@@ -49,7 +49,7 @@ require "dbconfig/config.php"
     <div class="form-label-group">
       <input type="username" id="inputUserName" class="form-control" placeholder="Uer Nsame" name="username" required autofocus />
       <label for="inputUserName">User Name</label>
-    </div>
+    </div> 
 
     <div class="form-label-group">
       <input type="password" id="inputPassword" class="form-control" placeholder="password1" name="password" required />

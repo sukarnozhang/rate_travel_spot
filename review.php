@@ -66,7 +66,7 @@ if (isset($_GET["name"])) {
             <div class="container">
                 <h1>Welcome <?= $_SESSION['username']; ?>! </h1>
                 <br></br>
-                <p class="lead text-muted">Please Rate the Movie Below</p>]
+                <p class="lead text-muted">Please Rate the Places Below</p>
             </div>
         </section>
 
@@ -74,15 +74,15 @@ if (isset($_GET["name"])) {
             <div class="container">
                 <div class="row">
                     <?php
-                    $movie = $_GET["name"];
-                    $query = "SELECT movie_id, image FROM movies WHERE movie_name = '$movie'";
+                    $place = $_GET["name"];
+                    $query = "SELECT place_id, image FROM place WHERE place_name = '$place'";
                     $result = mysqli_query($con, $query);
                     $row = mysqli_fetch_array($result);
-                    $movieid = $row['movie_id'];
+                    $placeid = $row['place_id'];
 
                     $result = mysqli_query($con, $query);
                     while ($row = mysqli_fetch_array($result)) {
-                        $movieid = $row['movie_id'];
+                        $placeid = $row['place_id'];
                         $image = $row['image'];
 
                         echo '
@@ -112,7 +112,7 @@ if (isset($_GET["name"])) {
                         $rating = $_POST["rating"];
 
                         // Fill in the query to insert the rating into the database. 
-                        $query = "INSERT into movie_reviews VALUES('$userid', '$movieid', '$rating')";
+                        $query = "INSERT into place_review VALUES('$userid', '$placeid', '$rating')";
 
                         $query_run = mysqli_query($con, $query);
                         if ($query_run) {
@@ -131,17 +131,17 @@ if (isset($_GET["name"])) {
                     <div>
                         <h2>All Ratings</h2>
                         <?php
-                        $moviename = $_GET['name'];
-                        $query = "SELECT movie_id FROM movies WHERE movie_name = '$moviename' ";
+                        $placename = $_GET['name'];
+                        $query = "SELECT place_id FROM place WHERE place_name = '$placename' ";
                         $result = mysqli_query($con, $query);
                         $row = mysqli_fetch_array($result);
-                        $movieid = $row['movie_id'];
+                        $placeid = $row['place_id'];
 
                         // Fill in the query(JOIN) to join the userinfo and movie_reviews table together so that you can display the respective rating given by each username. Use $movieid to filter the records so that only the ratings for the selected movie is shown.
-                        $query = "SELECT userinfo.username, movie_reviews.ratings
-						FROM userinfo LEFT JOIN movie_reviews
-						ON userinfo.user_id = movie_reviews.user_id
-						WHERE movie_reviews.movie_id = '$movieid'";
+                        $query = "SELECT userinfo.username, place_review.ratings
+						FROM userinfo LEFT JOIN place_review
+						ON userinfo.user_id = place_review.user_id
+						WHERE place_review.place_id = '$placeid'";
 
                         $result = mysqli_query($con, $query);
                         while ($row = mysqli_fetch_array($result)) {

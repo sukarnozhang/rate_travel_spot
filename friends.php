@@ -39,6 +39,7 @@ require "dbconfig/config.php"
 	$result = mysqli_query($con, $query);
 	$row = mysqli_fetch_array($result);
 	$followerid = $row['user_id'];
+	
 	if (isset($_POST["follow"])) {
 		$followee = $_POST["followee"];
 		$query = "SELECT user_id FROM userinfo WHERE username = '$followee' ";

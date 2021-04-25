@@ -45,10 +45,10 @@ require "dbconfig/config.php"
             <div class="container">
                 <div class="row">
                     <?php
-                    $query = "SELECT movie_name, image FROM movies";
+                    $query = "SELECT place_name, image FROM place";
                     $result = mysqli_query($con, $query);
                     while ($row = mysqli_fetch_array($result)) {
-                        $name = $row['movie_name'];
+                        $name = $row['place_name'];
                         $image = $row['image'];
 
                         echo '

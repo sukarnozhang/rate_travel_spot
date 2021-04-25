@@ -54,7 +54,7 @@ require "dbconfig/config.php"
     <form class="form-signin" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="loginbox">
 
         <div class="text-center mb-4">
-            <img class="mb-4" src="bootstrap.png" alt="" width="72" height="72" />
+            <img class="mb-4" src="./photos/bootstrap.png" alt="" width="72" height="72" />
             <h1 class="h3 mb-3 font-weight-normal">Register New Accounts</h1>
         </div>
 
